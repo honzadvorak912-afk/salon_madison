@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fotogalerie – Salón Madison Pardubice</title>
+  <meta name="description" content="Fotogalerie kadeřnického salónu Madison – ukázky naší práce, střihů a barvení." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="galerie.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <span class="name">Madison</span>
+        <span class="sub">Kadeřnický salón</span>
+      </a>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Domů</a></li>
+        <li><a href="sluzby.html">Služby</a></li>
+        <li><a href="galerie.html">Fotogalerie</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="kontakt.html" class="nav-cta">Objednat se</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="nav-overlay"></div>
+
+  <section class="page-hero galerie-hero">
+    <div class="container">
+      <span class="eyebrow">Naše práce</span>
+      <h1>Fotogalerie</h1>
+      <p>Podívejte se na ukázky našich střihů, barvení a účesů. Galerie se průběžně doplňuje.</p>
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <div class="container">
+      <div id="gallery" class="gallery-grid"></div>
+      <div id="gallery-empty" class="gallery-empty" hidden>
+        <p>Zatím zde nejsou žádné fotky. Brzy přidáme ukázky naší práce. 🌸</p>
+      </div>
+      <div id="gallery-loading" class="gallery-loading">Načítám fotky…</div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <button class="lb-close" aria-label="Zavřít">&times;</button>
+    <img id="lb-img" src="" alt="" />
+    <div id="lb-caption" class="lb-caption"></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="name">Madison</span>
+        <p>Kadeřnický salón v Pardubicích. Profesionální péče o vaše vlasy s prémiovými produkty L'Oréal Professionnel.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p>Masarykovo náměstí 220<br>Pardubice 530 02, 1. patro</p>
+        <p>Telefon: <a href="tel:+420466401661">466 401 661</a></p>
+      </div>
+      <div>
+        <h4>Stránky</h4>
+        <p><a href="index.html">Domů</a></p>
+        <p><a href="sluzby.html">Služby</a></p>
+        <p><a href="galerie.html">Fotogalerie</a></p>
+        <p><a href="kontakt.html">Kontakt</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="year"></span> Salón Madison · <a href="admin.html">Administrace</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="supabase-gallery.js"></script>
+  <script src="main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const grid = document.getElementById("gallery");
+    const empty = document.getElementById("gallery-empty");
+    const loading = document.getElementById("gallery-loading");
+
+    async function render() {
+      loading.hidden = false;
+      const photos = await fetchPhotos();
+      loading.hidden = true;
+      grid.innerHTML = "";
+      if (!photos.length) { empty.hidden = false; return; }
+      empty.hidden = true;
+      photos.forEach((p) => {
+        const fig = document.createElement("figure");
+        fig.className = "gallery-item";
+        fig.innerHTML = `<img src="${p.url}" alt="${p.caption || "Salón Madison"}" loading="lazy">` +
+          (p.caption ? `<figcaption>${p.caption}</figcaption>` : "");
+        fig.addEventListener("click", () => openLightbox(p.url, p.caption || ""));
+        grid.appendChild(fig);
+      });
+    }
+
+    // LIGHTBOX
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lb-img");
+    const lbCap = document.getElementById("lb-caption");
+    function openLightbox(url, cap) {
+      lbImg.src = url; lbCap.textContent = cap;
+      lb.classList.add("open"); document.body.style.overflow = "hidden";
+    }
+    function closeLightbox() {
+      lb.classList.remove("open"); lbImg.src = ""; document.body.style.overflow = "";
+    }
+    lb.querySelector(".lb-close").addEventListener("click", (e) => { e.stopPropagation(); closeLightbox(); });
+    lb.addEventListener("click", (e) => { if (e.target === lb) closeLightbox(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+
+    render();
+    // realtime – změny se projeví hned na všech zařízeních
+    subscribePhotos(render);
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Služby – Salón Madison Pardubice</title>
+  <meta name="description" content="Kadeřnické služby salónu Madison: dámské střihy, barvení, melír, péče o vlasy, společenské účesy a poradenství." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="sluzby.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <span class="name">Madison</span>
+        <span class="sub">Kadeřnický salón</span>
+      </a>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Domů</a></li>
+        <li><a href="sluzby.html">Služby</a></li>
+        <li><a href="galerie.html">Fotogalerie</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="kontakt.html" class="nav-cta">Objednat se</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="nav-overlay"></div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero sluzby-hero">
+    <div class="container">
+      <span class="eyebrow">Co nabízíme</span>
+      <h1>Naše služby</h1>
+      <p>Kompletní kadeřnická péče s prémiovými produkty L'Oréal Professionnel. Každý úkon přizpůsobíme vašim přáním a typu vlasů.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="container">
+      <div class="services-intro">
+        <p>V kadeřnictví Madison vás čekají nejnovější trendy dámských střihů a dalších skvělých služeb. Pracujeme s nejkvalitnějšími produkty L'Oréal Professionnel a nabízíme odborné poradenství, abyste odcházeli s dokonalou vlasovou image.</p>
+        <p>Jako hrdí držitelé titulu <strong>„Salon Expert"</strong> uděleného od L'Oréal Professionnel se pečlivě staráme o vaše vlasy.</p>
+      </div>
+
+      <div class="price-note">
+        <p><strong>Objednávky a dotazy</strong> jsou aktuálně přijímány pouze osobně či telefonicky (nikoliv e‑mailem či jinou formou). Standardní pracovní dobu lze přizpůsobit vašemu přání a požadavkům.</p>
+        <a href="kontakt.html" class="btn btn-primary">Kontakt a objednání</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="name">Madison</span>
+        <p>Kadeřnický salón v Pardubicích. Profesionální péče o vaše vlasy s prémiovými produkty L'Oréal Professionnel.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p>Masarykovo náměstí 220<br>Pardubice 530 02, 1. patro</p>
+        <p>Telefon: <a href="tel:+420466401661">466 401 661</a></p>
+      </div>
+      <div>
+        <h4>Stránky</h4>
+        <p><a href="index.html">Domů</a></p>
+        <p><a href="sluzby.html">Služby</a></p>
+        <p><a href="galerie.html">Fotogalerie</a></p>
+        <p><a href="kontakt.html">Kontakt</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="year"></span> Salón Madison · <a href="admin.html">Administrace</a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

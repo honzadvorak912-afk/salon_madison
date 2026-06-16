@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Administrace – Salón Madison</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body class="admin-body">
+
+  <!-- LOGIN -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-card">
+      <span class="name brand-name">Madison</span>
+      <p class="login-sub">Administrace fotogalerie</p>
+      <form id="login-form">
+        <label for="pw">Heslo</label>
+        <input type="password" id="pw" required placeholder="Zadejte heslo" autocomplete="current-password" />
+        <button type="submit" class="btn btn-primary">Přihlásit se</button>
+        <p id="login-error" class="login-error"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div id="admin-panel" class="admin-panel" hidden>
+    <header class="admin-header">
+      <div class="container admin-header-inner">
+        <div class="brand">
+          <span class="name">Madison</span>
+          <span class="sub">Administrace</span>
+        </div>
+        <div class="admin-actions">
+          <a href="galerie.html" target="_blank" class="btn btn-outline">Zobrazit galerii</a>
+          <button id="logout-btn" class="btn btn-primary">Odhlásit</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container admin-main">
+
+      <!-- UPLOAD -->
+      <section class="admin-card">
+        <h2>Přidat fotky</h2>
+        <p class="hint">Vyberte jednu nebo více fotek. Nahrané fotky se ihned objeví v galerii na všech zařízeních.</p>
+        <div class="upload-area" id="drop-area">
+          <input type="file" id="file-input" accept="image/*" multiple hidden />
+          <button class="btn btn-outline" id="pick-btn">Vybrat fotky</button>
+          <p class="upload-hint">nebo sem přetáhněte soubory</p>
+        </div>
+        <input type="text" id="caption-input" class="caption-input" placeholder="Popisek (nepovinné, použije se u všech vybraných)" />
+        <div id="upload-status" class="upload-status"></div>
+      </section>
+
+      <!-- PHOTOS -->
+      <section class="admin-card">
+        <div class="admin-card-head">
+          <h2>Fotky v galerii</h2>
+          <span id="photo-count" class="count-badge">0</span>
+        </div>
+        <div id="admin-gallery" class="admin-gallery"></div>
+        <p id="admin-empty" class="hint" hidden>Zatím žádné fotky.</p>
+      </section>
+
+      <!-- NOTES -->
+      <section class="admin-card">
+        <div class="admin-card-head">
+          <h2>Poznámky / oznámení</h2>
+          <span id="note-count" class="count-badge">0</span>
+        </div>
+        <p class="hint">Krátká oznámení pro zákazníky (např. změna otevírací doby, dovolená). Zobrazí se na úvodní stránce a projeví se ihned na všech zařízeních.</p>
+        <form id="note-form" class="note-form">
+          <textarea id="note-input" rows="3" placeholder="Text oznámení…" required></textarea>
+          <button type="submit" class="btn btn-primary">Přidat oznámení</button>
+        </form>
+        <div id="notes-admin-list" class="notes-admin-list"></div>
+        <p id="notes-admin-empty" class="hint" hidden>Zatím žádná oznámení.</p>
+      </section>
+
+      <!-- CHANGE PASSWORD -->
+      <section class="admin-card">
+        <h2>Změna hesla</h2>
+        <form id="pw-form" class="pw-form">
+          <div class="field">
+            <label for="old-pw">Současné heslo</label>
+            <input type="password" id="old-pw" required autocomplete="current-password" />
+          </div>
+          <div class="field">
+            <label for="new-pw">Nové heslo</label>
+            <input type="password" id="new-pw" required minlength="4" autocomplete="new-password" />
+          </div>
+          <div class="field">
+            <label for="new-pw2">Nové heslo znovu</label>
+            <input type="password" id="new-pw2" required minlength="4" autocomplete="new-password" />
+          </div>
+          <button type="submit" class="btn btn-primary">Změnit heslo</button>
+          <p id="pw-status" class="form-status"></p>
+        </form>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="supabase-gallery.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

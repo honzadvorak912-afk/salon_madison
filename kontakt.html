@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt – Salón Madison Pardubice</title>
+  <meta name="description" content="Kontakt na kadeřnický salón Madison v Pardubicích – adresa, telefon, otevírací doba a kontaktní formulář." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="kontakt.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <span class="name">Madison</span>
+        <span class="sub">Kadeřnický salón</span>
+      </a>
+      <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Domů</a></li>
+        <li><a href="sluzby.html">Služby</a></li>
+        <li><a href="galerie.html">Fotogalerie</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="kontakt.html" class="nav-cta">Objednat se</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="nav-overlay"></div>
+
+  <section class="page-hero kontakt-hero">
+    <div class="container">
+      <span class="eyebrow">Spojte se s námi</span>
+      <h1>Kontakt</h1>
+      <p>Objednávky a dotazy přijímáme osobně nebo telefonicky. Můžete nám také napsat přes formulář níže.</p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container contact-grid">
+
+      <!-- INFO -->
+      <div class="contact-info">
+        <div class="info-block">
+          <h3>Kde nás najdete</h3>
+          <p>Masarykovo náměstí 220<br>Pardubice 530 02, 1. patro</p>
+          <p class="muted">Přes křižovatku naproti vstupu do AFI Paláce, nad obchodem s porcelánem a domácími potřebami.</p>
+        </div>
+
+        <div class="info-block">
+          <h3>Telefon</h3>
+          <p>Společný: <a href="tel:+420466401661">466 401 661</a></p>
+          <p><strong>Mirka Matějů</strong> (majitelka, hl. kadeřnice): <a href="tel:+420776580282">776 580 282</a></p>
+          <p><strong>Monika Vašáková</strong> (kadeřnice): <a href="tel:+420776551879">776 551 879</a></p>
+        </div>
+
+        <div class="info-block hours">
+          <h3>Otevírací doba</h3>
+          <ul>
+            <li><span>Pondělí</span><span>dle objednávek</span></li>
+            <li><span>Pondělí, středa, pátek</span><span>7:00 – 15:00</span></li>
+            <li><span>Úterý, čtvrtek</span><span>7:00 – 18:00</span></li>
+            <li><span>Sobota – neděle</span><span>tel. domluva</span></li>
+          </ul>
+          <p class="muted">Pracovní dobu lze přizpůsobit vašemu přání.</p>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="contact-form-wrap">
+        <h3>Napište nám</h3>
+        <form id="contact-form" action="https://formspree.io/f/mjgdlazz" method="POST">
+          <div class="field">
+            <label for="name">Jméno</label>
+            <input type="text" id="name" name="jmeno" required placeholder="Vaše jméno" />
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="vas@email.cz" />
+          </div>
+          <div class="field">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="telefon" placeholder="Nepovinné" />
+          </div>
+          <div class="field">
+            <label for="message">Zpráva</label>
+            <textarea id="message" name="zprava" rows="5" required placeholder="O co máte zájem? Napište nám…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Odeslat zprávu</button>
+          <p id="form-status" class="form-status"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- MAPA -->
+    <div class="map-wrap">
+      <iframe
+        title="Mapa – Salón Madison"
+        src="https://maps.google.com/maps?q=Masarykovo%20n%C3%A1m%C4%9Bst%C3%AD%20220%20Pardubice&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="name">Madison</span>
+        <p>Kadeřnický salón v Pardubicích. Profesionální péče o vaše vlasy s prémiovými produkty L'Oréal Professionnel.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p>Masarykovo náměstí 220<br>Pardubice 530 02, 1. patro</p>
+        <p>Telefon: <a href="tel:+420466401661">466 401 661</a></p>
+      </div>
+      <div>
+        <h4>Stránky</h4>
+        <p><a href="index.html">Domů</a></p>
+        <p><a href="sluzby.html">Služby</a></p>
+        <p><a href="galerie.html">Fotogalerie</a></p>
+        <p><a href="kontakt.html">Kontakt</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="year"></span> Salón Madison · <a href="admin.html">Administrace</a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      status.textContent = "Odesílám…";
+      status.className = "form-status";
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+        if (res.ok) {
+          status.textContent = "Děkujeme! Vaše zpráva byla odeslána.";
+          status.classList.add("ok");
+          form.reset();
+        } else {
+          status.textContent = "Něco se nepovedlo. Zkuste to prosím znovu nebo nám zavolejte.";
+          status.classList.add("err");
+        }
+      } catch {
+        status.textContent = "Chyba spojení. Zkuste to prosím znovu nebo nám zavolejte.";
+        status.classList.add("err");
+      }
+    });
+  </script>
+</body>
+</html>
