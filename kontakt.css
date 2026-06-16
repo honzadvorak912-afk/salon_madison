@@ -34,7 +34,7 @@
 }
 .field input::placeholder, .field textarea::placeholder { color: #7a6f62; }
 .field input:focus, .field textarea:focus {
-  outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(214,181,106,.18);
+  outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(227,160,110,.22);
 }
 .contact-form-wrap .btn { width: 100%; }
 .form-status { margin-top: 14px; font-size: .92rem; text-align: center; min-height: 1.2em; }

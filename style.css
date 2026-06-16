@@ -1,18 +1,20 @@
 /* =============================================================
    SPOLEČNÝ STYL - SALÓN MADISON
-   Tmavý & luxusní (tmavé pozadí, zlaté akcenty)
+   Tmavě vínová (bordó) – dle původního webu
    ============================================================= */
 
 :root {
-  --gold: #d6b56a;
-  --gold-dark: #c0a050;
-  --gold-soft: #e7d3a0;
-  --bg: #14110f;
-  --bg-2: #1d1916;
-  --bg-3: #262019;
-  --ink: #f3ece0;
-  --ink-soft: #b8ac9a;
-  --line: #38302a;
+  /* akcent – teplá zlato-skořicová, ladí s vínovou (původní web měl rgb(211,99,66)) */
+  --gold: #e3a06e;
+  --gold-dark: #cf7f4a;
+  --gold-soft: #f0c4a3;
+  /* pozadí – odstíny vínové / bordó (původní web: rgb(81,27,34) a rgb(60,17,24)) */
+  --bg: #2c1018;
+  --bg-2: #3a141f;
+  --bg-3: #4a1a27;
+  --ink: #f6ecec;
+  --ink-soft: #d3b3b6;
+  --line: #5a2531;
   --shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
   --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.6);
   --radius: 14px;
@@ -65,15 +67,15 @@ img { max-width: 100%; display: block; }
   border: none;
   transition: all .25s ease;
 }
-.btn-primary { background: var(--gold); color: #14110f; box-shadow: 0 8px 24px rgba(214,181,106,.28); }
+.btn-primary { background: var(--gold); color: #2c1018; box-shadow: 0 8px 24px rgba(227,160,110,.28); }
 .btn-primary:hover { background: var(--gold-soft); transform: translateY(-2px); }
 .btn-outline { background: transparent; border: 1.5px solid var(--gold); color: var(--gold); }
-.btn-outline:hover { background: var(--gold); color: #14110f; }
+.btn-outline:hover { background: var(--gold); color: #2c1018; }
 
 /* ---------- HEADER / NAV ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(20,17,15,.82);
+  background: rgba(31,10,16,.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
@@ -93,7 +95,7 @@ img { max-width: 100%; display: block; }
 }
 .nav-links a:hover, .nav-links a.active { color: var(--ink); }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-.nav-cta { background: var(--gold); color: #14110f !important; padding: 10px 22px !important; border-radius: 50px; }
+.nav-cta { background: var(--gold); color: #2c1018 !important; padding: 10px 22px !important; border-radius: 50px; }
 .nav-cta::after { display: none; }
 .nav-cta:hover { background: var(--gold-soft); }
 
@@ -116,14 +118,14 @@ section { padding: 84px 0; }
 }
 .page-hero::before {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(20,17,15,.7), rgba(20,17,15,.86));
+  background: linear-gradient(180deg, rgba(31,10,16,.74), rgba(31,10,16,.88));
 }
 .page-hero .container { position: relative; z-index: 1; }
 .page-hero h1 { margin: 10px 0 16px; }
 .page-hero p { max-width: 560px; margin: 0 auto; font-size: 1.08rem; color: var(--ink); }
 
 /* ---------- FOOTER ---------- */
-.site-footer { background: #0e0c0a; color: var(--ink-soft); padding: 60px 0 28px; border-top: 1px solid var(--line); }
+.site-footer { background: #1f0a10; color: var(--ink-soft); padding: 60px 0 28px; border-top: 1px solid var(--line); }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
 .site-footer h4 { color: var(--ink); margin-bottom: 18px; font-size: 1.25rem; }
 .site-footer p, .site-footer a { color: var(--ink-soft); font-size: .92rem; line-height: 1.9; }

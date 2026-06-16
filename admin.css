@@ -10,7 +10,7 @@
   background: url("images/IMG_1846.jpg") center/cover no-repeat;
   position: relative;
 }
-.login-screen::before { content: ""; position: absolute; inset: 0; background: rgba(14,12,10,.85); }
+.login-screen::before { content: ""; position: absolute; inset: 0; background: rgba(31,10,16,.88); }
 .login-card {
   position: relative; z-index: 1;
   background: var(--bg-2); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow-lg);
@@ -25,11 +25,11 @@
   background: var(--bg-3); color: var(--ink);
   font-family: var(--font-body); font-size: .95rem; margin-bottom: 18px;
 }
-#login-form input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(214,181,106,.18); }
+#login-form input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(227,160,110,.22); }
 .login-error { color: #e0817a; font-size: .88rem; text-align: center; margin-top: 12px; min-height: 1em; }
 
 /* PANEL */
-.admin-header { background: #0e0c0a; border-bottom: 1px solid var(--line); padding: 16px 0; position: sticky; top: 0; z-index: 50; }
+.admin-header { background: #1f0a10; border-bottom: 1px solid var(--line); padding: 16px 0; position: sticky; top: 0; z-index: 50; }
 .admin-header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .admin-header .brand .name { color: var(--ink); font-size: 1.6rem; }
 .admin-header .brand .sub { color: var(--gold); }
@@ -45,7 +45,7 @@
 .admin-card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
 .admin-card-head h2 { margin-bottom: 0; }
 .count-badge {
-  background: var(--gold); color: #14110f; border-radius: 50px;
+  background: var(--gold); color: #2c1018; border-radius: 50px;
   padding: 2px 12px; font-size: .85rem; font-weight: 600;
 }
 .hint { color: var(--ink-soft); font-size: .92rem; margin-bottom: 16px; }
@@ -63,7 +63,7 @@
   font-family: var(--font-body); font-size: .95rem;
 }
 .caption-input::placeholder { color: #7a6f62; }
-.caption-input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(214,181,106,.18); }
+.caption-input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(227,160,110,.22); }
 .upload-status { margin-top: 14px; font-size: .92rem; }
 .upload-status .row { padding: 4px 0; color: var(--ink-soft); }
 .upload-status .ok { color: #7fd68a; }
@@ -93,7 +93,7 @@
   resize: vertical; margin-bottom: 12px;
 }
 .note-form textarea::placeholder { color: #7a6f62; }
-.note-form textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(214,181,106,.18); }
+.note-form textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(227,160,110,.22); }
 .notes-admin-list { display: flex; flex-direction: column; gap: 12px; }
 .note-row {
   display: flex; align-items: flex-start; gap: 14px; justify-content: space-between;
@@ -117,7 +117,7 @@
   padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px;
   background: var(--bg-3); color: var(--ink); font-family: var(--font-body); font-size: .95rem;
 }
-.field input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(214,181,106,.18); }
+.field input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(227,160,110,.22); }
 .form-status { margin-top: 12px; font-size: .9rem; min-height: 1em; }
 .form-status.ok { color: #7fd68a; }
 .form-status.err { color: #e0817a; }
